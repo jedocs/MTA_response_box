@@ -10,7 +10,7 @@
 #define GLOBAL_H_
 #include <atmel_start.h>
 
-#define VERSION "1.0.3"
+#define VERSION "1.0.5"
 
 
 #define BEEP_SOUND_LENGTH 1148

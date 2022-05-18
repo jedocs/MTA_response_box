@@ -1,7 +1,13 @@
+// ha mindkét nagyméretû hangfájl használva van, akkor az egyikben egy 256ms-os glitch lesz (65535-ös értékek)
+// a compiler runtimeban a RAM-ba másolja és nem fér el?????
+// az egyiket nem használva a jelenség megszûnik (konkrétan a mátrix olvasást kikommentelve (dc_out = stop_sound[END_SOUND_LENGTH - end_sound_length];)).
+// az egymáshoz képesti sorrendjüktõl (TIMER int-ben) függ, hogy melyiknél fordul elõ
+
+
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// ext irq-ból nem jó az LCD soros kommunikáció!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// irq-ból nem jó az LCD soros kommunikáció!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -87,23 +93,20 @@ static uint8_t prescaler = PRESCALER_VALUE;
 
 
 static uint16_t error_beep_length = 0;
-static uint16_t sound_length = 0;
-static uint16_t start_sound_length = 0;
+static uint16_t click_length = 0;
+static uint16_t alfa_length = 0;
 static uint16_t end_sound_length = 0;
 extern uint16_t beep_sound_length;
 extern uint16_t sync_beep_length;
 
 static uint16_t ps_error_counter = 0;
 
-static uint16_t dc_out = 0;
+static uint16_t dc_out = 511;
 static uint16_t trig_LED_delay = TRIGGER_LED_DELAY;
 static uint16_t trigger_debounce = TRIGGER_DEBOUNCE_TIME;
 static uint16_t pb_debounce = PB_DEBOUNCE_TIME;
 
 
-void debug(){
-	
-}
 
 void write_flash(){
 	uint8_t delay = 10;
@@ -551,7 +554,7 @@ void start_simulation()
 	print_volumes(SIMULATION_CURRENT_VOLUME_STR);
 	
 	printf("playing start sound\r\n");
-	start_sound_length = START_SOUND_LENGTH;
+	alfa_length = ALFA_SOUND_LENGTH;
 	delay_ms(1000);
 	session_data.simulation_mode=true;	
 }
@@ -597,7 +600,7 @@ void start_man_trig()
 	print_volumes(MAN_TRIG_CURRENT_VOLUME_STR);
 
 	printf("playing start sound\r\n");
-	start_sound_length = START_SOUND_LENGTH;
+	alfa_length = ALFA_SOUND_LENGTH;
 	session_data.manual_trigger=true;	
 }
 
@@ -653,7 +656,7 @@ void start_session()
 		print_volumes(CURRENT_VOLUME_STR);
 	
 		printf("playing start sound\r\n");
-		start_sound_length = START_SOUND_LENGTH;
+		alfa_length = ALFA_SOUND_LENGTH;
 		session_data.session_running = true;
 	}
 	else {
@@ -720,32 +723,25 @@ static void sync_trigger(void)	// called by ext irq
 
 static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
    {	
-	   
 	if (error_beep_length){
 		dc_out = error_beep[ERROR_BEEP_LENGTH - error_beep_length];
-		dac_async_write(&DAC_0, 0, &dc_out, 1);
-		error_beep_length --;
+ 		dac_async_write(&DAC_0, 0, &dc_out, 1);
+ 		error_beep_length --;
 	}
-		   
-	if (sound_length){
-		dc_out = click_sound[CLICK_SOUND_LENGTH - sound_length];
+	
+// 	else if (alfa_length){
+// 		dc_out = start_sound_data[ALFA_SOUND_LENGTH - alfa_length];
+// 		dac_async_write(&DAC_0, 0, &dc_out, 1);
+// 		alfa_length --;
+// 	}
+	
+	else if (click_length){
+		dc_out = click_sound[CLICK_SOUND_LENGTH - click_length];
 		dac_async_write(&DAC_0, 0, &dc_out, 1);
-		sound_length --;
+		click_length --;
 		}
 		
-	if (start_sound_length){
-		dc_out = start_sound[START_SOUND_LENGTH - start_sound_length];
-		dac_async_write(&DAC_0, 0, &dc_out, 1);
-		start_sound_length --;
-	}	
-	
-	if (end_sound_length){
-		dc_out = end_sound[END_SOUND_LENGTH - end_sound_length];
-		dac_async_write(&DAC_0, 0, &dc_out, 1);
-		end_sound_length --;
-	}
-	
-	if (beep_sound_length){
+	else if (beep_sound_length){
 		if (session_data.response_sound){
 			dc_out = beep_sound[BEEP_SOUND_LENGTH - beep_sound_length];
 			dac_async_write(&DAC_0, 0, &dc_out, 1);
@@ -756,7 +752,7 @@ static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
 		}
 	}
 	
-	if (sync_beep_length){
+	else if (sync_beep_length){
 		if (session_data.trigger_sound){
 			dc_out = sync_beep[SYNC_BEEP_LENGTH - sync_beep_length];
 			dac_async_write(&DAC_0, 0, &dc_out, 1);
@@ -766,6 +762,13 @@ static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
 			sync_beep_length = 0;
 		}
 	}
+	
+// 	else if (end_sound_length){
+// 		dc_out = stop_sound[END_SOUND_LENGTH - end_sound_length];
+// 		dac_async_write(&DAC_0, 0, &dc_out, 1);
+// 		end_sound_length --;
+// 	}
+	
 	
 	if (prescaler){
 		prescaler --;
@@ -1098,12 +1101,12 @@ int main(void)
 					
 					if ((event_report.object_index < STOP_SIMULATION) && (event_report.object_index > MAN_TRIG_BACK)){ //avoid doubleclick with 'Both' action buttons
 						if (event_report.value_lsb == 1){
-							sound_length = CLICK_SOUND_LENGTH;
+							click_length = CLICK_SOUND_LENGTH;
 						}
 					}
 					
 					else {
-						sound_length = CLICK_SOUND_LENGTH;
+						click_length = CLICK_SOUND_LENGTH;
 					}
 									
 					switch (event_report.object_index) {
@@ -1469,7 +1472,7 @@ int main(void)
 				case FOURDBUTTON:
 				
 					printf("4dbutton pressed, index: %u, value: %u\r\n", event_report.object_index, event_report.value_lsb);
-					sound_length = CLICK_SOUND_LENGTH;
+					click_length = CLICK_SOUND_LENGTH;
 					
 					switch (event_report.object_index) {
 						
@@ -1519,7 +1522,7 @@ int main(void)
 				
 					printf("4dbutton pressed, index: %u, value: %u\r\n", event_report.object_index, event_report.value_lsb);
 					
-					sound_length = CLICK_SOUND_LENGTH;
+					click_length = CLICK_SOUND_LENGTH;
 
 					uint32_t prev_kb_value = kb_value;
 
