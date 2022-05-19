@@ -1,7 +1,12 @@
 // ha mindkét nagyméretû hangfájl használva van, akkor az egyikben egy 256ms-os glitch lesz (65535-ös értékek)
 // a compiler runtimeban a RAM-ba másolja és nem fér el?????
-// az egyiket nem használva a jelenség megszûnik (konkrétan a mátrix olvasást kikommentelve (dc_out = stop_sound[END_SOUND_LENGTH - end_sound_length];)).
+// az egyiket nem használva a jelenség megszûnik (konkrétan a mátrix olvasást kikommentelve (dc_out = stop_sound[STOP_SOUND_LENGTH - stop_sound_length];)).
 // az egymáshoz képesti sorrendjüktõl (TIMER int-ben) függ, hogy melyiknél fordul elõ
+
+// release buildnél nagyon nem mindegy az optimalizáció, van hogy egyáltalán nem mûködik a program
+// release buildnél extra delayok kellenek, különben nem mûködik ami debugban igen
+
+// 1.0.6 release-ben optimize for size opcióval lett fordítva, start/stop sound nélkül
 
 
 
@@ -88,14 +93,14 @@ const char set_error_text_USB_error[] = {WRITE_OBJ,STRINGS,ERROR_STR,0,USB_DISCO
 
 const uint32_t ad = 0x3e000;
 
-static uint16_t timeout_counter = 0;
+static uint32_t timeout_counter = 0;
 static uint8_t prescaler = PRESCALER_VALUE;
 
 
 static uint16_t error_beep_length = 0;
 static uint16_t click_length = 0;
-static uint16_t alfa_length = 0;
-static uint16_t end_sound_length = 0;
+static uint16_t start_sound_length = 0;
+static uint16_t stop_sound_length = 0;
 extern uint16_t beep_sound_length;
 extern uint16_t sync_beep_length;
 
@@ -267,16 +272,17 @@ void io_write_clear_ack(const char *const buf, const unsigned char length)
 		}
 	}
 	else{
-		printf("start timeout");
+		printf("start timeout\r\n");
 		timeout_counter = ACK_TIMEOUT;
 		while (timeout_counter){
+			delay_us(100);    		// delay nélkül release-ban nem mûködik, csak debug-ban!!!!!
 				if (ACK_received){
 				break;
 			}
 		}
 		if (ACK_received){
 			printf("received an ACK finally...\r\n");
-			printf("timeout counter: %u\r\n", timeout_counter);
+			printf("timeout counter: %lu\r\n", (ACK_TIMEOUT - timeout_counter));
 			printf("send command\r\n");
 			io_write_clear_ack(buf, length);
 		}
@@ -521,7 +527,9 @@ void usb_error(){
 	printf("!!!!!!!!!!!!!!!!!!!\r\n");
 	printf("USB error\r\n");
 	
-	while (usb_disconnected){}
+	while (usb_disconnected){
+		delay_ms(1);		// delay nélkül release-ban nem mûködik, csak debug-ban!!!!!
+	}
 	
 	printf("USB connection ok\r\n");
 	switch_to_form(DEFAULT_FORM);
@@ -554,7 +562,7 @@ void start_simulation()
 	print_volumes(SIMULATION_CURRENT_VOLUME_STR);
 	
 	printf("playing start sound\r\n");
-	alfa_length = ALFA_SOUND_LENGTH;
+	start_sound_length = START_SOUND_LENGTH;
 	delay_ms(1000);
 	session_data.simulation_mode=true;	
 }
@@ -563,7 +571,7 @@ void stop_simulation()
 {
 	printf("stopping simulation\r\n");
 	pb_received = false;
-	end_sound_length = END_SOUND_LENGTH;
+	stop_sound_length = STOP_SOUND_LENGTH;
 	io_write_clear_ack(simulation_trigger_LED_off,6);
 	switch_to_form(MENU_FORM);
 
@@ -600,7 +608,7 @@ void start_man_trig()
 	print_volumes(MAN_TRIG_CURRENT_VOLUME_STR);
 
 	printf("playing start sound\r\n");
-	alfa_length = ALFA_SOUND_LENGTH;
+	start_sound_length = START_SOUND_LENGTH;
 	session_data.manual_trigger=true;	
 }
 
@@ -608,7 +616,7 @@ void stop_man_trig()
 {
 	printf("stopping manual trigger\r\n");
 	pb_received = false;
-	end_sound_length = END_SOUND_LENGTH;
+	stop_sound_length = STOP_SOUND_LENGTH;
 	io_write_clear_ack(man_trig_trigger_LED_off,6);
 	switch_to_form(MENU_FORM);
 
@@ -656,7 +664,7 @@ void start_session()
 		print_volumes(CURRENT_VOLUME_STR);
 	
 		printf("playing start sound\r\n");
-		alfa_length = ALFA_SOUND_LENGTH;
+		start_sound_length = START_SOUND_LENGTH;
 		session_data.session_running = true;
 	}
 	else {
@@ -667,7 +675,7 @@ void start_session()
 void stop_session()
 {
 	printf("stopping session\r\n");
-	end_sound_length = END_SOUND_LENGTH;
+	stop_sound_length = STOP_SOUND_LENGTH;
 	switch_to_form(DEFAULT_FORM);
 	
 	session_data.session_running = false;
@@ -724,26 +732,20 @@ static void sync_trigger(void)	// called by ext irq
 static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
    {	
 	if (error_beep_length){
-		dc_out = error_beep[ERROR_BEEP_LENGTH - error_beep_length];
+		dc_out = error_beep_sound_data[ERROR_BEEP_LENGTH - error_beep_length];
  		dac_async_write(&DAC_0, 0, &dc_out, 1);
  		error_beep_length --;
 	}
 	
-// 	else if (alfa_length){
-// 		dc_out = start_sound_data[ALFA_SOUND_LENGTH - alfa_length];
-// 		dac_async_write(&DAC_0, 0, &dc_out, 1);
-// 		alfa_length --;
-// 	}
-	
-	else if (click_length){
-		dc_out = click_sound[CLICK_SOUND_LENGTH - click_length];
+	if (click_length){
+		dc_out = click_sound_data[CLICK_SOUND_LENGTH - click_length];
 		dac_async_write(&DAC_0, 0, &dc_out, 1);
 		click_length --;
 		}
 		
-	else if (beep_sound_length){
+	if (beep_sound_length){
 		if (session_data.response_sound){
-			dc_out = beep_sound[BEEP_SOUND_LENGTH - beep_sound_length];
+			dc_out = beep_sound_data[BEEP_SOUND_LENGTH - beep_sound_length];
 			dac_async_write(&DAC_0, 0, &dc_out, 1);
 			beep_sound_length --;
 		}
@@ -752,21 +754,25 @@ static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
 		}
 	}
 	
-	else if (sync_beep_length){
+	if (sync_beep_length){
 		if (session_data.trigger_sound){
-			dc_out = sync_beep[SYNC_BEEP_LENGTH - sync_beep_length];
+			dc_out = sync_beep_sound_data[SYNC_BEEP_LENGTH - sync_beep_length];
 			dac_async_write(&DAC_0, 0, &dc_out, 1);
 			sync_beep_length --;
 		}
 		else{
 			sync_beep_length = 0;
-		}
-	}
+ 		}
+ 	}
 	
-// 	else if (end_sound_length){
-// 		dc_out = stop_sound[END_SOUND_LENGTH - end_sound_length];
+// 	else if (start_sound_length){
+// 		dc_out = start_sound_data[START_SOUND_LENGTH - start_sound_length];
 // 		dac_async_write(&DAC_0, 0, &dc_out, 1);
-// 		end_sound_length --;
+// 		start_sound_length --;	
+// 	else if (stop_sound_length){
+// 		dc_out = stop_sound_data[STOP_SOUND_LENGTH - stop_sound_length];
+// 		dac_async_write(&DAC_0, 0, &dc_out, 1);
+// 		stop_sound_length --;
 // 	}
 	
 	

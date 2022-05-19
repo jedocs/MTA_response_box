@@ -10,11 +10,15 @@
 #define GLOBAL_H_
 #include <atmel_start.h>
 
-#define VERSION "1.0.5"
+#define VERSION "1.0.6"
 
 
 #define BEEP_SOUND_LENGTH 1148
 #define SYNC_BEEP_LENGTH 982
+#define START_SOUND_LENGTH 8100 //10002
+#define STOP_SOUND_LENGTH 10001
+#define ERROR_BEEP_LENGTH 3202
+#define CLICK_SOUND_LENGTH 376
 
 #define ACK_TIMEOUT 400
 #define PRESCALER_VALUE 7 // 7== 1kHz !!!!!!!!
