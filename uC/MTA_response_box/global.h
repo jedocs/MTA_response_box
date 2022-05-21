@@ -10,7 +10,7 @@
 #define GLOBAL_H_
 #include <atmel_start.h>
 
-#define VERSION "1.0.6"
+#define VERSION "1.0.7"
 
 
 #define BEEP_SOUND_LENGTH 1148
@@ -90,6 +90,13 @@
 #define CURRENT_SLICE_STR 0
 #define CURRENT_VOLUME_STR 1
 
+#define FORM1_TRIGGER_SOUND_SW 2
+#define FORM1_RESPONSE_SOUND_SW 3
+#define FORM1_TRIGGER_SOUND_STR 20
+#define FORM1_RESPONSE_SOUND_STR 21
+#define TRIGGER_RECEIVED_LED 3
+#define TRIGGER_SENT_LED 2
+
 //form2
 #define MAN_TRIG_CURRENT_SLICE_STR 16
 #define MAN_TRIG_CURRENT_VOLUME_STR 17
@@ -155,10 +162,14 @@
 #define MANUAL_TRIGGER 27
 #define MENU_BACK 32
 #define ABOUT 31
+#define HELP 37
 
 //form8
 #define FORM8_MORE 29
 #define FORM8_ACCEPT 30
+
+//form9
+#define FORM9_BACK 36
 
 //form10
 #define FORM10_BACK 33
@@ -176,6 +187,7 @@
 #define KEYBOARD_FORM 6
 #define MENU_FORM 7
 #define SETTINGS_3_FORM 8
+#define HELP_FORM 9
 #define ABOUT_FORM 10
 #define ERROR_FORM 11
 
@@ -212,6 +224,7 @@ extern struct report {
 
 extern struct session {
 	bool trig_LED_on;
+	bool trig_sent_LED_on;
 	bool session_finished;
 	bool session_running;
 	bool simulation_mode;

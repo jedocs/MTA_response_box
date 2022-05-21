@@ -1,0 +1,3247 @@
+﻿Version     0.0
+Platform    Gen4-uLCD-32PT-LR
+PlatRes     240x320
+Depends
+end
+Options
+    Genie
+    Speed                        115200
+    Checksum                     No
+    ResponseSize                 2
+    Multidrop                    No
+    Destination                  1
+    DestBank                     0
+    MainForm                     0
+    SndBuf                       0
+    ButtonDisable                No
+    SignedDigits                 No
+    MaxString                    75
+    ComPort                      0
+    ComTX1pinIdx                 0
+    ComRX1pinIdx                 0
+end
+Form
+    Name                         Form0
+    Alias                        Form0
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton0
+    Alias                        Winbutton0
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      start
+    Color                        GREEN
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       118
+    Left                         80
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          40
+    Width                        160
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton1
+    Alias                        Winbutton1
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      menu
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       55
+    Left                         80
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          172
+    Width                        160
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         Statictext0
+    Alias                        Statictext0
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'fMRI response device interface'
+    Color                        BLACK
+    Font.Color                   SILVER
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       28
+    Left                         9
+    Top                          0
+    Transparent                  Yes
+    Width                        303
+    WordWrap                     No
+end
+Form
+    Name                         Form1
+    Alias                        Form1
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton2
+    Alias                        Winbutton2
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      stop
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       118
+    Left                         10
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          52
+    Width                        160
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         Statictext1
+    Alias                        Statictext1
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current slice:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       28
+    Left                         15
+    Top                          180
+    Transparent                  Yes
+    Width                        128
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext2
+    Alias                        Statictext2
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current volume:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       28
+    Left                         15
+    Top                          208
+    Transparent                  Yes
+    Width                        158
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext3
+    Alias                        Statictext3
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigger received'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         14
+    Top                          12
+    Transparent                  Yes
+    Width                        118
+    WordWrap                     No
+end
+Strings
+    Name                         Strings0
+    Alias                        Strings0
+    Alignment                    Right
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         186
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          180
+    Width                        119
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings1
+    Alias                        Strings1
+    Alignment                    Right
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         186
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          208
+    Width                        119
+    OnChanged                    ''
+end
+4Dbutton
+    Name                         4Dbutton2
+    Alias                        4Dbutton2
+    Height                       46
+    Left                         240
+    Matrix                       -1
+    Momentary                    No
+    Size                         Scaled
+    Style                        Green
+    Top                          69
+    Type                         Slider01
+    Width                        48
+    OnChanged                    'Report Message'
+end
+Strings
+    Name                         Strings20
+    Alias                        Strings20
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         200
+    Strings                      off\non\n
+    StringsStyle                 Book
+    Top                          80
+    Width                        40
+    OnChanged                    'Report Message'
+end
+4Dbutton
+    Name                         4Dbutton3
+    Alias                        4Dbutton3
+    Height                       46
+    Left                         240
+    Matrix                       -1
+    Momentary                    No
+    Size                         Scaled
+    Style                        Green
+    Top                          135
+    Type                         Slider01
+    Width                        48
+    OnChanged                    'Report Message'
+end
+Strings
+    Name                         Strings21
+    Alias                        Strings21
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         200
+    Strings                      off\non\n
+    StringsStyle                 Book
+    Top                          146
+    Width                        40
+    OnChanged                    'Report Message'
+end
+StaticText
+    Name                         Statictext23
+    Alias                        Statictext23
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigger sound:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         190
+    Top                          52
+    Transparent                  Yes
+    Width                        106
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext24
+    Alias                        Statictext24
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'response sound:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         183
+    Top                          118
+    Transparent                  Yes
+    Width                        120
+    WordWrap                     No
+end
+UserLed
+    Name                         Userled3
+    Alias                        Userled3
+    Active                       No
+    Bevel.BorderColor            'Office 2007 (Luna)'
+    Bevel.BorderWidth            0
+    Bevel.InnerColor             0xF0F0F0
+    Bevel.InnerHighlight         clLime
+    Bevel.InnerOutline           None
+    Bevel.InnerShadow            0x005100
+    Bevel.InnerSpace             1
+    Bevel.InnerStyle             None
+    Bevel.Innerwidth             1
+    Bevel.OuterColor             clBtnFace
+    Bevel.OuterHighlight         clBtnHighlight
+    Bevel.OuterOutline           Outer
+    Bevel.OuterShadow            clBtnShadow
+    Bevel.OuterSpace             0
+    Bevel.OuterStyle             Raised
+    Bevel.Outerwidth             4
+    Bevel.Visible                Yes
+    Height                       25
+    Left                         140
+    OutlineColor                 GREEN
+    OutlineWidth                 0
+    PaletteEx.High1              clYellow
+    PaletteEx.High2              OLIVE
+    PaletteEx.Low1               0x05303E
+    PaletteEx.Low2               BLACK
+    Top                          12
+    Width                        25
+    OnChanged                    ''
+end
+UserLed
+    Name                         Userled2
+    Alias                        Userled2
+    Active                       No
+    Bevel.BorderColor            'Office 2007 (Luna)'
+    Bevel.BorderWidth            0
+    Bevel.InnerColor             0xF0F0F0
+    Bevel.InnerHighlight         clLime
+    Bevel.InnerOutline           None
+    Bevel.InnerShadow            0x005100
+    Bevel.InnerSpace             1
+    Bevel.InnerStyle             None
+    Bevel.Innerwidth             1
+    Bevel.OuterColor             clBtnFace
+    Bevel.OuterHighlight         clBtnHighlight
+    Bevel.OuterOutline           Outer
+    Bevel.OuterShadow            clBtnShadow
+    Bevel.OuterSpace             0
+    Bevel.OuterStyle             Raised
+    Bevel.Outerwidth             4
+    Bevel.Visible                Yes
+    Height                       25
+    Left                         283
+    OutlineColor                 GREEN
+    OutlineWidth                 0
+    PaletteEx.High1              clLime
+    PaletteEx.High2              GREEN
+    PaletteEx.Low1               0x000051
+    PaletteEx.Low2               BLACK
+    Top                          12
+    Width                        25
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext25
+    Alias                        Statictext25
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigger sent'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         190
+    Top                          12
+    Transparent                  Yes
+    Width                        87
+    WordWrap                     No
+end
+Form
+    Name                         Form2
+    Alias                        Form2
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton3
+    Alias                        Winbutton3
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      back
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         163
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          165
+    Width                        155
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton4
+    Alias                        Winbutton4
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''A'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         3
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton5
+    Alias                        Winbutton5
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''B'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         83
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton6
+    Alias                        Winbutton6
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''C'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         163
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton7
+    Alias                        Winbutton7
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''D'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         243
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton8
+    Alias                        Winbutton8
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'next slice'
+    Color                        clYellow
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         3
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          165
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         Statictext4
+    Alias                        Statictext4
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'manual trigger'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       30
+    Left                         88
+    Top                          0
+    Transparent                  Yes
+    Width                        150
+    WordWrap                     Yes
+end
+Strings
+    Name                         Strings16
+    Alias                        Strings16
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         180
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          30
+    Width                        130
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings17
+    Alias                        Strings17
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         180
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          54
+    Width                        130
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext19
+    Alias                        Statictext19
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current slice:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       23
+    Left                         3
+    Top                          30
+    Transparent                  Yes
+    Width                        154
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext20
+    Alias                        Statictext20
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current volume:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       23
+    Left                         3
+    Top                          54
+    Transparent                  Yes
+    Width                        171
+    WordWrap                     Yes
+end
+UserLed
+    Name                         Userled1
+    Alias                        Userled1
+    Active                       No
+    Bevel.BorderColor            'Office 2007 (Luna)'
+    Bevel.BorderWidth            0
+    Bevel.InnerColor             0xF0F0F0
+    Bevel.InnerHighlight         clLime
+    Bevel.InnerOutline           None
+    Bevel.InnerShadow            0x005100
+    Bevel.InnerSpace             1
+    Bevel.InnerStyle             None
+    Bevel.Innerwidth             1
+    Bevel.OuterColor             clBtnFace
+    Bevel.OuterHighlight         clBtnHighlight
+    Bevel.OuterOutline           None
+    Bevel.OuterShadow            clBtnShadow
+    Bevel.OuterSpace             0
+    Bevel.OuterStyle             Raised
+    Bevel.Outerwidth             4
+    Bevel.Visible                Yes
+    Height                       25
+    Left                         108
+    OutlineColor                 GREEN
+    OutlineWidth                 0
+    PaletteEx.High1              clLime
+    PaletteEx.High2              GREEN
+    PaletteEx.Low1               0x000051
+    PaletteEx.Low2               BLACK
+    Top                          180
+    Width                        25
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext21
+    Alias                        Statictext21
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      trigger
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         95
+    Top                          207
+    Transparent                  Yes
+    Width                        51
+    WordWrap                     No
+end
+Form
+    Name                         Form3
+    Alias                        Form3
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton9
+    Alias                        Winbutton9
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''B'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         83
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton10
+    Alias                        Winbutton10
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''A'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         3
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton11
+    Alias                        Winbutton11
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''C'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         163
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton12
+    Alias                        Winbutton12
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'send ''D'''
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         243
+    Matrix                       -1
+    Momentary                    Both
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          84
+    Width                        75
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton13
+    Alias                        Winbutton13
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      stop
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       75
+    Left                         163
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          165
+    Width                        155
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+UserLed
+    Name                         Userled0
+    Alias                        Userled0
+    Active                       No
+    Bevel.BorderColor            'Office 2007 (Luna)'
+    Bevel.BorderWidth            0
+    Bevel.InnerColor             clBtnFace
+    Bevel.InnerHighlight         clLime
+    Bevel.InnerOutline           None
+    Bevel.InnerShadow            0x005100
+    Bevel.InnerSpace             1
+    Bevel.InnerStyle             None
+    Bevel.Innerwidth             1
+    Bevel.OuterColor             clBtnFace
+    Bevel.OuterHighlight         clBtnHighlight
+    Bevel.OuterOutline           None
+    Bevel.OuterShadow            clBtnShadow
+    Bevel.OuterSpace             0
+    Bevel.OuterStyle             Raised
+    Bevel.Outerwidth             4
+    Bevel.Visible                Yes
+    Height                       25
+    Left                         108
+    OutlineColor                 GREEN
+    OutlineWidth                 0
+    PaletteEx.High1              clLime
+    PaletteEx.High2              GREEN
+    PaletteEx.Low1               0x000051
+    PaletteEx.Low2               BLACK
+    Top                          180
+    Width                        25
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext5
+    Alias                        Statictext5
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      trigger
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         95
+    Top                          207
+    Transparent                  Yes
+    Width                        51
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext6
+    Alias                        Statictext6
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      simulation
+    Color                        BLACK
+    Font.Color                   clWhite
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       28
+    Left                         106
+    Top                          0
+    Transparent                  Yes
+    Width                        108
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext7
+    Alias                        Statictext7
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current volume:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       23
+    Left                         3
+    Top                          54
+    Transparent                  Yes
+    Width                        171
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext8
+    Alias                        Statictext8
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'current slice:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       23
+    Left                         3
+    Top                          30
+    Transparent                  Yes
+    Width                        154
+    WordWrap                     Yes
+end
+Strings
+    Name                         Strings14
+    Alias                        Strings14
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         180
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          30
+    Width                        130
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings15
+    Alias                        Strings15
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         180
+    Strings                      \n
+    StringsStyle                 Message
+    Top                          54
+    Width                        130
+    OnChanged                    ''
+end
+Form
+    Name                         Form4
+    Alias                        Form4
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   'Report Message'
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton14
+    Alias                        Winbutton14
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          100
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton15
+    Alias                        Winbutton15
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      cancel
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         188
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton16
+    Alias                        Winbutton16
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      accept
+    Color                        GREEN
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton17
+    Alias                        Winbutton17
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      more
+    Color                        clYellow
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         98
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton18
+    Alias                        Winbutton18
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          148
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         Statictext9
+    Alias                        Statictext9
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigger sound:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         10
+    Top                          12
+    Transparent                  Yes
+    Width                        106
+    WordWrap                     Yes
+end
+4Dbutton
+    Name                         4Dbutton0
+    Alias                        4Dbutton0
+    Height                       46
+    Left                         266
+    Matrix                       -1
+    Momentary                    No
+    Size                         Scaled
+    Style                        Green
+    Top                          1
+    Type                         Slider01
+    Width                        48
+    OnChanged                    'Report Message'
+end
+StaticText
+    Name                         Statictext10
+    Alias                        Statictext10
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'response sound:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         10
+    Top                          60
+    Transparent                  Yes
+    Width                        120
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext11
+    Alias                        Statictext11
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigg. on -th slice (0=each):'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Top                          97
+    Transparent                  Yes
+    Width                        136
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext12
+    Alias                        Statictext12
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'trigger on every -th volume (0=each):'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Top                          145
+    Transparent                  Yes
+    Width                        170
+    WordWrap                     Yes
+end
+Strings
+    Name                         Strings2
+    Alias                        Strings2
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      off\non\n
+    StringsStyle                 Book
+    Top                          12
+    Width                        78
+    OnChanged                    'Report Message'
+end
+Strings
+    Name                         Strings3
+    Alias                        Strings3
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      off\non\n
+    StringsStyle                 Book
+    Top                          60
+    Width                        78
+    OnChanged                    'Report Message'
+end
+Strings
+    Name                         Strings4
+    Alias                        Strings4
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          111
+    Width                        78
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings5
+    Alias                        Strings5
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          159
+    Width                        78
+    OnChanged                    ''
+end
+4Dbutton
+    Name                         4Dbutton1
+    Alias                        4Dbutton1
+    Height                       46
+    Left                         266
+    Matrix                       -1
+    Momentary                    No
+    Size                         Scaled
+    Style                        Green
+    Top                          49
+    Type                         Slider01
+    Width                        48
+    OnChanged                    'Report Message'
+end
+Line
+    Name                         Line4
+    Alias                        Line4
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           48
+    Y2                           48
+end
+Line
+    Name                         Line5
+    Alias                        Line5
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           96
+    Y2                           96
+end
+Line
+    Name                         Line6
+    Alias                        Line6
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           144
+    Y2                           144
+end
+Line
+    Name                         Line7
+    Alias                        Line7
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           192
+    Y2                           192
+end
+Form
+    Name                         Form5
+    Alias                        Form5
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   'Report Message'
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton19
+    Alias                        Winbutton19
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      back
+    Color                        clYellow
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         98
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton20
+    Alias                        Winbutton20
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      accept
+    Color                        GREEN
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton21
+    Alias                        Winbutton21
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      cancel
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         188
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          196
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton22
+    Alias                        Winbutton22
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          148
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton23
+    Alias                        Winbutton23
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          100
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton24
+    Alias                        Winbutton24
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          52
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton25
+    Alias                        Winbutton25
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      set
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         266
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          4
+    Width                        48
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+StaticText
+    Name                         Statictext13
+    Alias                        Statictext13
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'number of slices:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         10
+    Top                          12
+    Transparent                  Yes
+    Width                        129
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext14
+    Alias                        Statictext14
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'number of volumes:'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       22
+    Left                         10
+    Top                          60
+    Transparent                  Yes
+    Width                        152
+    WordWrap                     No
+end
+StaticText
+    Name                         Statictext15
+    Alias                        Statictext15
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'TE, ms (pulse length for simulation):'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Top                          97
+    Transparent                  Yes
+    Width                        165
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext16
+    Alias                        Statictext16
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'TR, ms (repetition time for simulation):'
+    Color                        BLACK
+    Font.Color                   WHITE
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         10
+    Top                          145
+    Transparent                  Yes
+    Width                        170
+    WordWrap                     Yes
+end
+Strings
+    Name                         Strings6
+    Alias                        Strings6
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          15
+    Width                        78
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings7
+    Alias                        Strings7
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          63
+    Width                        78
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings8
+    Alias                        Strings8
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          111
+    Width                        78
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings9
+    Alias                        Strings9
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       22
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         188
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          159
+    Width                        78
+    OnChanged                    ''
+end
+Line
+    Name                         Line0
+    Alias                        Line0
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           48
+    Y2                           48
+end
+Line
+    Name                         Line1
+    Alias                        Line1
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           96
+    Y2                           96
+end
+Line
+    Name                         Line2
+    Alias                        Line2
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           144
+    Y2                           144
+end
+Line
+    Name                         Line3
+    Alias                        Line3
+    Color                        SLATEGRAY
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           192
+    Y2                           192
+end
+Form
+    Name                         Form6
+    Alias                        Form6
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Keyboard
+    Name                         Keyboard0
+    Alias                        Keyboard0
+    AutoCapsDisplay              Yes
+    Fill                         (Default)
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       180
+    HighlightCaps                BLACK
+    KeyboardType                 KB1
+    KeyDistance                  0
+    Left                         0
+    SmallFont.Color              BLACK
+    SmallFont.Effects            []
+    SmallFont.Name               'Bodoni MT'
+    SmallFont.Size               18
+    SmallFont.Style              [Bold]
+    Top                          60
+    Width                        320
+    OnChanged                    'Report Message'
+end
+Strings
+    Name                         Strings10
+    Alias                        Strings10
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       25
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -16
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         0
+    Strings                      '        number of slices (1 - 9999):\n     number of volumes (1 - 9999):\n  trigger on every -th slice (0=each):\ntrigg. on every -th volume (0=each):\n        pulse length (100 - 999 ms):\n  TRtime (TE*slices - 9999999 ms):'
+    StringsStyle                 Book
+    Top                          0
+    Width                        320
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings11
+    Alias                        Strings11
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       28
+    FGcolor                      WHITE
+    Font.Bold                    Yes
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -18
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         125
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          28
+    Width                        90
+    OnChanged                    ''
+end
+Form
+    Name                         Form7
+    Alias                        Form7
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   'Report Message'
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton26
+    Alias                        Winbutton26
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      settings
+    Color                        GRAY
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         12
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          86
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton27
+    Alias                        Winbutton27
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      'manual trigger'
+    Color                        GREEN
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         168
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          6
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton28
+    Alias                        Winbutton28
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      simulation
+    Color                        GREEN
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         12
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          6
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton32
+    Alias                        Winbutton32
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      back
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         168
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          166
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton31
+    Alias                        Winbutton31
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      about
+    Color                        clYellow
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         12
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          166
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton37
+    Alias                        Winbutton37
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      help
+    Color                        clYellow
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       68
+    Left                         168
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          86
+    Width                        140
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Form
+    Name                         Form9
+    Alias                        Form9
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Strings
+    Name                         Strings22
+    Alias                        Strings22
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       132
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    '4D Font3 (8x12)'
+    Font.Opaque                  Yes
+    Font.Size                    -12
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         0
+    Strings                      '\nstart: start experiment\n\nmenu: go to main menu \n\n\n\n\n\n\n\nstop: stop experiment\n\ntrigger received/sent LEDs: signals\ntrigger pulse from scanner/sync signal\nto PC\n\ntrigger/response sound on/off: switch on/off trigger/response sound signals\n\ncurrent slice/volume: shows the actual\nslice/volume and all slices/volumes\nsimulation: start simulation\n\nmanual trigger: start manual trigger\n\nsettings: open parameter setting screen\n\nhelp: open help\n\nabout: open about screen\n\nback: go back to startup screen\ncurrent slice/volume: shows the actual\nslice/volume and all slices/volumes\n\nsend ''A'',''B'',''C'',''D'': send the\ncorresponding letter to the PC\n(simulates response button push)\n\ntrigger LED: signals when sync signal\nis beeing sent to the PC\n\nstop: stop simulation, go to main menu\ncurrent slice/volume: shows the actual\nslice/volume and all slices/volumes set for the experiment\n\nsend ''A'',''B'',''C'',''D'': send the\ncorresponding letter to the PC (simulates response button push)\n\ntrigger LED: signals when a sync signal\nis beeing sent to the PC\n\nnext slice: advance slice counter.If\ntrigger is set up for each slice, sync\nsignal is sent to the PC. Othervise\nonly if slice counter is equal to the\nset slice for trigger will sync signal\nbe sent (provided the current volume\nis set for trigger).\n\nback: go back to main menu\n\n\ntrigger/response sound on/off: switch on/off trigger and response signals sound\n\ntrigg. on -th slice: set on which slice\nin a volume the sync signal should be\nsent to the PC. If set to 0 sync signal\nwill be sent for each slice.\n\n\n\ntrigg on every -th volume: set in which\nvolumes sync signal should be sent.\nSignal will be sent on appropriate\nslices in the first, and then every\nx-th volume. 0 and 1 means each volume.\n\naccept/more/cancel: accept set values / open next parameter setup screen / cancel changes and go back to main menu\n\n\nnumber of slices: number of slices in one volume of the experiment.\n\nnumber of volumes: number of volumes of the experiment.\n\nTE: pulse length in ms. The time it takes to acquire one slice in\nsimulation mode.\n\n\nTR: repetition time in ms. Time between start of acquisition of two consequtive volumes in simulation. The value should be >= (number of slices * TE). \nIf the set value is too small, it will be set for the possible minimum.\n\naccept/back/cancel: accept set values / go back to parameter setup screen 1 /\ncancel changes and go back to main menu\n\nkeyboard: set the given parameter. The possible min/max values are displayed. If a parameter is set below minimum, it will be set to minimum.\n\nOK: accept set value\n\ncancel: cancel changes\n\n<-: delete the last digit\n\nprev/next: go to previous/next help screen.\n\nback: go back to main menu\n'
+    StringsStyle                 Book
+    Top                          108
+    Width                        320
+    OnChanged                    Strings23Set
+end
+UserImages
+    Name                         Userimages0
+    Alias                        Userimages0
+    Height                       100
+    Images                       form0_.png\nform1_.png\nform7_.png\nform3_.png\nform2_.png\nform2_.png\nform4_.png\nform4_.png\nform5_.png\nform5_.png\nform6_.png\nform9_.png
+    Left                         10
+    Stretch                      No
+    Top                          1
+    Width                        133
+    OnChanged                    Strings22Set
+end
+Line
+    Name                         Line9
+    Alias                        Line9
+    Color                        clWhite
+    Pattern                      Solid
+    X1                           0
+    X2                           320
+    Y1                           106
+    Y2                           106
+end
+Rectangle
+    Name                         Rectangle0
+    Alias                        Rectangle0
+    Color                        clWhite
+    Filled                       No
+    Height                       102
+    Left                         9
+    Outlined                     Yes
+    OutlineColor                 WHITE
+    Pattern                      Solid
+    Top                          0
+    Width                        135
+end
+WinButton
+    Name                         Winbutton34
+    Alias                        Winbutton34
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      prev
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         152
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          62
+    Width                        50
+    OnChanged                    Userimages0Previous
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton35
+    Alias                        Winbutton35
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      next
+    Color                        clGray
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         208
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          62
+    Width                        50
+    OnChanged                    Userimages0Next
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton36
+    Alias                        Winbutton36
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      back
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       40
+    Left                         264
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          62
+    Width                        50
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Strings
+    Name                         Strings23
+    Alias                        Strings23
+    Alignment                    Center
+    BGcolor                      BLACK
+    Height                       46
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    'Bodoni MT'
+    Font.Opaque                  Yes
+    Font.Size                    -14
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         152
+    Strings                      'startup screen\n\nexperiment running screen\nmenu screen\n\nsimulation screen\n\nmanual trigger screen\nmanual trigger screen\nparameter setup screen 1\nparameter setup screen 1\nparameter setup screen 2\nparameter setup screen 2\nkeyboard screen\n\nhelp screen'
+    StringsStyle                 Book
+    Top                          6
+    Width                        164
+    OnChanged                    'Report Message'
+end
+Form
+    Name                         Form10
+    Alias                        Form10
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+WinButton
+    Name                         Winbutton33
+    Alias                        Winbutton33
+    Appearance.Alignment         Center
+    Appearance.Layout            Left
+    Appearance.PictureAlignment  Right
+    Appearance.SimpleLayout      No
+    Appearance.Spacing           3
+    AutoSizeToPicture            No
+    Bevel                        Yes
+    BevelColor                   clWhite
+    Caption                      back
+    Color                        clRed
+    Font.Color                   clWindowText
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    14
+    Font.Style                   [Bold]
+    Height                       44
+    Left                         232
+    Matrix                       -1
+    Momentary                    Yes
+    Picture                      (None)
+    StatusWhenOff.BGcolor        RED
+    StatusWhenOff.Caption        ''
+    StatusWhenOff.Glow           Yes
+    StatusWhenOff.Color          WHITE
+    StatusWhenOff.Effects        []
+    StatusWhenOff.Name           Tahoma
+    StatusWhenOff.Size           8
+    StatusWhenOff.Style          []
+    StatusWhenOff.Visible        Yes
+    StatusWhenOn.BGcolor         RED
+    StatusWhenOn.Caption         ''
+    StatusWhenOn.Glow            Yes
+    StatusWhenOn.Color           WHITE
+    StatusWhenOn.Effects         []
+    StatusWhenOn.Name            Tahoma
+    StatusWhenOn.Size            8
+    StatusWhenOn.Style           []
+    StatusWhenOn.Visible         Yes
+    Top                          188
+    Width                        78
+    OnChanged                    'Report Message'
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Strings
+    Name                         Strings12
+    Alias                        Strings12
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       63
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    '4D Font3 (8x12)'
+    Font.Opaque                  Yes
+    Font.Size                    -12
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         24
+    Strings                      '12 channel optical fMRI response device interface. Emulates an USB keyboard. Converts optical response and trigger signals to keystrokes.\n'
+    StringsStyle                 Message
+    Top                          12
+    Width                        265
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings13
+    Alias                        Strings13
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       19
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    '4D Font3 (8x12)'
+    Font.Opaque                  Yes
+    Font.Size                    -12
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         24
+    Strings                      ''
+    StringsStyle                 Message
+    Top                          88
+    Width                        180
+    OnChanged                    ''
+end
+Strings
+    Name                         Strings19
+    Alias                        Strings19
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       27
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    '4D Font3 (8x12)'
+    Font.Opaque                  Yes
+    Font.Size                    -12
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         24
+    Strings                      'more info: fmri.devices@gmail.com'
+    StringsStyle                 Message
+    Top                          201
+    Width                        200
+    OnChanged                    ''
+end
+Form
+    Name                         Form11
+    Alias                        Form11
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Strings
+    Name                         Strings18
+    Alias                        Strings18
+    Alignment                    Left
+    BGcolor                      BLACK
+    Height                       121
+    FGcolor                      WHITE
+    Font.Bold                    No
+    Font.CharSet                 ANSI
+    Font.Italic                  No
+    Font.Name                    '4D Font3 (8x12)'
+    Font.Opaque                  Yes
+    Font.Size                    -12
+    Font.Strikethrough           No
+    Font.Underline               No
+    Left                         10
+    Strings                      'Power supply error, power supply voltage too low! \n\nMake sure you use a proper, 12V power supply!\n\n\n\n\n\nPower supply error, power supply voltage too high! \n\nMake sure you use a proper, 12V power supply!\n\n\n\n\n\nUSB communication error, no connection to stimulus PC! \n\nCheck if PC is running, check USB connection!\n'
+    StringsStyle                 Book
+    Top                          50
+    Width                        300
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext22
+    Alias                        Statictext22
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      Error
+    Color                        BLACK
+    Font.Color                   clRed
+    Font.Effects                 []
+    Font.Name                    'Bodoni MT'
+    Font.Size                    18
+    Font.Style                   [Bold]
+    Height                       28
+    Left                         132
+    Top                          10
+    Transparent                  Yes
+    Width                        55
+    WordWrap                     Yes
+end

@@ -59,6 +59,7 @@ const char switch_to_menu_form[] =				{WRITE_OBJ,FORM,MENU_FORM,0,0,WRITE_OBJ^FO
 const char switch_to_settings_3_form[] =		{WRITE_OBJ,FORM,SETTINGS_3_FORM,0,0,WRITE_OBJ^FORM^SETTINGS_3_FORM};
 const char switch_to_about_form[] =				{WRITE_OBJ,FORM,ABOUT_FORM,0,0,WRITE_OBJ^FORM^ABOUT_FORM};
 const char switch_to_error_form[] =				{WRITE_OBJ,FORM,ERROR_FORM,0,0,WRITE_OBJ^FORM^ERROR_FORM};
+const char switch_to_help_form[] =				{WRITE_OBJ,FORM,HELP_FORM,0,0,WRITE_OBJ^FORM^HELP_FORM};
 
 
 const char set_trigger_sound_off[] = {WRITE_OBJ,STRINGS,2,0,OFF,WRITE_OBJ^STRINGS^2^OFF};
@@ -73,6 +74,24 @@ const char set_response_sound_on[] = {WRITE_OBJ,STRINGS,3,0,ON,WRITE_OBJ^STRINGS
 const char set_response_sound_switch_off[] = {WRITE_OBJ,FOURDBUTTON,1,0,OFF,WRITE_OBJ^FOURDBUTTON^1^OFF};
 const char set_response_sound_switch_on[] = {WRITE_OBJ,FOURDBUTTON,1,0,ON,WRITE_OBJ^FOURDBUTTON^1^ON};
 	
+	
+	
+	
+const char set_form1_trigger_sound_off[] = {WRITE_OBJ,STRINGS,20,0,OFF,WRITE_OBJ^STRINGS^20^OFF};
+const char set_form1_trigger_sound_on[] = {WRITE_OBJ,STRINGS,20,0,ON,WRITE_OBJ^STRINGS^20^ON};
+
+const char set_form1_trigger_sound_switch_off[] = {WRITE_OBJ,FOURDBUTTON,2,0,OFF,WRITE_OBJ^FOURDBUTTON^2^OFF};
+const char set_form1_trigger_sound_switch_on[] = {WRITE_OBJ,FOURDBUTTON,2,0,ON,WRITE_OBJ^FOURDBUTTON^2^ON};
+
+const char set_form1_response_sound_off[] = {WRITE_OBJ,STRINGS,21,0,OFF,WRITE_OBJ^STRINGS^21^OFF};
+const char set_form1_response_sound_on[] = {WRITE_OBJ,STRINGS,21,0,ON,WRITE_OBJ^STRINGS^21^ON};
+
+const char set_form1_response_sound_switch_off[] = {WRITE_OBJ,FOURDBUTTON,3,0,OFF,WRITE_OBJ^FOURDBUTTON^3^OFF};
+const char set_form1_response_sound_switch_on[] = {WRITE_OBJ,FOURDBUTTON,3,0,ON,WRITE_OBJ^FOURDBUTTON^3^ON};
+	
+	
+	
+	
 const char set_no_of_slices_txt[] =	{WRITE_OBJ,STRINGS,10,0,0,WRITE_OBJ^STRINGS^10^0};
 const char set_no_of_volumes_txt[] =	{WRITE_OBJ,STRINGS,10,0,1,WRITE_OBJ^STRINGS^10^1};
 const char set_trigg_slice_txt[] =		{WRITE_OBJ,STRINGS,10,0,2,WRITE_OBJ^STRINGS^10^2};
@@ -85,6 +104,11 @@ const char simulation_trigger_LED_off[] =	{WRITE_OBJ,USERLED,SIMULATION_TRIGGER_
 	
 const char man_trig_trigger_LED_on[] =	{WRITE_OBJ,USERLED,MAN_TRIG_TRIGGER_LED,0,ON,WRITE_OBJ^USERLED^MAN_TRIG_TRIGGER_LED^ON};
 const char man_trig_trigger_LED_off[] =	{WRITE_OBJ,USERLED,MAN_TRIG_TRIGGER_LED,0,OFF,WRITE_OBJ^USERLED^MAN_TRIG_TRIGGER_LED^OFF};
+
+const char trigger_received_LED_on[] =	{WRITE_OBJ,USERLED,TRIGGER_RECEIVED_LED,0,ON,WRITE_OBJ^USERLED^TRIGGER_RECEIVED_LED^ON};
+const char trigger_received_LED_off[] =	{WRITE_OBJ,USERLED,TRIGGER_RECEIVED_LED,0,OFF,WRITE_OBJ^USERLED^TRIGGER_RECEIVED_LED^OFF};
+const char trigger_sent_LED_on[] =	{WRITE_OBJ,USERLED,TRIGGER_SENT_LED,0,ON,WRITE_OBJ^USERLED^TRIGGER_SENT_LED^ON};
+const char trigger_sent_LED_off[] =	{WRITE_OBJ,USERLED,TRIGGER_SENT_LED,0,OFF,WRITE_OBJ^USERLED^TRIGGER_SENT_LED^OFF};
 
 const char set_error_text_PS_high[] = {WRITE_OBJ,STRINGS,ERROR_STR,0,PS_VOLTAGE_HIGH,WRITE_OBJ^STRINGS^ERROR_STR^PS_VOLTAGE_HIGH};
 const char set_error_text_PS_low[] = {WRITE_OBJ,STRINGS,ERROR_STR,0,PS_VOLTAGE_LOW,WRITE_OBJ^STRINGS^ERROR_STR^PS_VOLTAGE_LOW};
@@ -108,6 +132,7 @@ static uint16_t ps_error_counter = 0;
 
 static uint16_t dc_out = 511;
 static uint16_t trig_LED_delay = TRIGGER_LED_DELAY;
+static uint16_t trig_sent_LED_delay = TRIGGER_LED_DELAY;
 static uint16_t trigger_debounce = TRIGGER_DEBOUNCE_TIME;
 static uint16_t pb_debounce = PB_DEBOUNCE_TIME;
 
@@ -183,7 +208,7 @@ void read_flash(){
 	flash_read(&FLASH_0, ad, a, 2);	
 	session_data.no_of_slices = a[0] + a[1] * 256;	
 	printf("no_of_slices read from flash: %u\r\n", session_data.no_of_slices);	
-	if ((session_data.no_of_slices < 1) || (session_data.no_of_slices > 999)) {
+	if ((session_data.no_of_slices < 1) || (session_data.no_of_slices > 9999)) {
 		session_data.no_of_slices = 25;
 	}	
 	
@@ -197,7 +222,7 @@ void read_flash(){
 	flash_read(&FLASH_0, ad + 4, a, 2);
 	session_data.trig_on_slice = a[0] + a[1] * 256;
 	printf("trig_on_slice read from flash: %u\r\n", session_data.trig_on_slice);	
-	if ((session_data.trig_on_slice < 0) || (session_data.trig_on_slice > 999)) {
+	if ((session_data.trig_on_slice < 0) || (session_data.trig_on_slice > 9999)) {
 		session_data.trig_on_slice = 0;
 	}
 			
@@ -219,15 +244,15 @@ void read_flash(){
 	session_data.TR_time = a[0] + a[1] * 256 + a[2] * 65536 + a[3] * 16777216;
 	printf("TR_time read from flash: %lu\r\n", session_data.TR_time);	
 	uint32_t minvalue_long = session_data.pulse_length * session_data.no_of_slices;
-	if (minvalue_long > 999999){   // hibaellenõrzés!!!!!!!!!!!!
-		minvalue_long = 999999;
+	if (minvalue_long > 9999999){   // hibaellenõrzés!!!!!!!!!!!!
+		minvalue_long = 9999999;
 	}
 	if (session_data.TR_time < minvalue_long) {  
 		session_data.TR_time = minvalue_long;
 	}
 	
-	if (session_data.TR_time > 999999) {
-		session_data.TR_time = 999999;
+	if (session_data.TR_time > 9999999) {
+		session_data.TR_time = 9999999;
 	}
 	
 		
@@ -317,8 +342,14 @@ static void print_version(){
 }
 
 static void print_no(uint32_t number, uint8_t str_no){
-		
-	unsigned char length = snprintf(buffer, 25, "___%lu", number);
+	
+	unsigned char length = snprintf(buffer, 25, "%lu", number);	
+	unsigned char pad = (7-length);
+	if ((pad<0) || (pad>6)){
+		pad = 0;
+	}
+	
+	length = snprintf(buffer, 25, "% *s   %lu", pad, "", number);   // pad to center align
 	
 	buffer[0] = WRITE_STR;
 	buffer[1] = str_no;
@@ -385,6 +416,30 @@ static void switch_to_form(const uint8_t form)
 			printf("sw to ses running form\r\n");
 			io_write_clear_ack(switch_to_session_running_form,6);
 			set_prev_curr_form(form);
+			
+			if (session_data.response_sound){
+				printf("setting response sound switch and text on\r\n");
+				io_write_clear_ack(set_form1_response_sound_on,6);
+				io_write_clear_ack(set_form1_response_sound_switch_on,6);
+			}
+			else{
+				printf("setting response sound switch and text off\r\n");
+				io_write_clear_ack(set_form1_response_sound_off,6);
+				io_write_clear_ack(set_form1_response_sound_switch_off,6);
+			}
+			
+			if (session_data.trigger_sound){
+				printf("setting trigger sound switch and text on\r\n");
+				io_write_clear_ack(set_form1_trigger_sound_on,6);
+				io_write_clear_ack(set_form1_trigger_sound_switch_on,6);
+			}
+			else{
+				printf("setting trigger sound switch and text off\r\n");
+				io_write_clear_ack(set_form1_trigger_sound_off,6);
+				io_write_clear_ack(set_form1_trigger_sound_switch_off,6);
+			}
+			
+			
 		break;	
 		
 		case MANUAL_TRIGGER_FORM:
@@ -498,6 +553,13 @@ static void switch_to_form(const uint8_t form)
 			set_prev_curr_form(form);
 			error_beep_length = ERROR_BEEP_LENGTH;
 		break;
+
+		case HELP_FORM:
+			printf("sw to help form\r\n");
+			io_write_clear_ack(switch_to_help_form,6);
+			set_prev_curr_form(form);
+		break;
+
 	}	
 }
 
@@ -635,6 +697,7 @@ void start_session()
 		printf("starting session\r\n");
 		
 		session_data.trig_LED_on = false;
+		session_data.trig_sent_LED_on = false;
 		session_data.trigger = false;
 		session_data.current_volume = 1;
 		session_data.current_slice = 0;
@@ -658,6 +721,9 @@ void start_session()
 		printf("powering up TX ch. 2\r\n");
 		gpio_set_pin_level(T2, true);
 	
+		io_write_clear_ack(trigger_received_LED_off,6);
+		io_write_clear_ack(trigger_sent_LED_off,6);
+
 		printf("setting current slice string\r\n");
 		print_slices(CURRENT_SLICE_STR);
 		printf("setting current volume string\r\n");
@@ -803,6 +869,10 @@ static void TIMER_task1_cb(const struct timer_task *const timer_task)   // 8kHz
 		
 		if (trig_LED_delay){
 			trig_LED_delay --;
+		}
+
+		if (trig_sent_LED_delay){
+			trig_sent_LED_delay --;
 		}
 		
 		if (pb_debounce){
@@ -968,19 +1038,50 @@ int main(void)
 		}
 		
 		
+
 		
 		if (session_data.session_running) {		
-			
-			if (session_data.previous_slice != session_data.current_slice){
-				session_data.previous_slice = session_data.current_slice;					
-				print_slices(CURRENT_SLICE_STR);
+
+			if (session_data.trigger){
+				if (!session_data.trig_sent_LED_on){
+					session_data.trig_sent_LED_on = true;
+					printf("trigger sent LED on\r\n");
+					io_write_clear_ack(trigger_sent_LED_on,6);
+					trig_sent_LED_delay = TRIGGER_LED_DELAY;
+				}
 			}
 			
+			if (session_data.previous_slice != session_data.current_slice){
+				session_data.previous_slice = session_data.current_slice;
+				if (!session_data.trig_LED_on){
+					session_data.trig_LED_on = true;
+					printf("trigger received LED on\r\n");
+					io_write_clear_ack(trigger_received_LED_on,6);
+					trig_LED_delay = TRIGGER_LED_DELAY;
+				}				
+				print_slices(CURRENT_SLICE_STR);
+
+			}
+
 			if (session_data.previous_volume != session_data.current_volume){
 				session_data.previous_volume = session_data.current_volume;				
 				print_volumes(CURRENT_VOLUME_STR);			
 			}
 			
+			if ((!trig_LED_delay) && (session_data.trig_LED_on)){
+				session_data.trig_LED_on = false;
+				printf("trigger received LED off\r\n");
+				io_write_clear_ack(trigger_received_LED_off,6);
+				
+			}
+
+			if ((!trig_sent_LED_delay) && (session_data.trig_sent_LED_on)){
+				session_data.trig_sent_LED_on = false;
+				printf("trigger sent LED off\r\n");
+				io_write_clear_ack(trigger_sent_LED_off,6);
+	
+			}
+
 			if (session_data.session_finished) {
 				session_data.session_running = false;
 				delay_ms(2000);
@@ -1285,7 +1386,7 @@ int main(void)
 							switch_to_form(KEYBOARD_FORM);
 							kb_value = session_temp.trig_on_slice;
 							minvalue = 0;
-							maxvalue = 999;
+							maxvalue = 9999;
 						
 							io_write_clear_ack(set_trigg_slice_txt,6);
 							print_no(kb_value, 11);
@@ -1335,7 +1436,7 @@ int main(void)
 							switch_to_form(KEYBOARD_FORM);
 							kb_value = session_temp.no_of_slices;
 							minvalue = 1;
-							maxvalue = 999;
+							maxvalue = 9999;
 
 							io_write_clear_ack(set_no_of_slices_txt,6);
 							print_no(kb_value, 11);
@@ -1372,13 +1473,13 @@ int main(void)
 							switch_to_form(KEYBOARD_FORM);
 							kb_value = session_temp.TR_time;
 							uint32_t minvalue_long = session_temp.pulse_length * session_temp.no_of_slices;
-							if (minvalue_long > 999999){   // hibaellenõrzés!!!!!!!!!!!!
-								minvalue = 999999;
+							if (minvalue_long > 9999999){   // hibaellenõrzés!!!!!!!!!!!!
+								minvalue = 9999999;
 							}
 							else{
 								minvalue = minvalue_long;
 							}
-							maxvalue = 999999;
+							maxvalue = 9999999;
 	
 							io_write_clear_ack(set_tr_time_txt,6);							
 							print_no(kb_value, 11);							
@@ -1440,6 +1541,11 @@ int main(void)
 							printf("about, switch to form 0\r\n");
 						break;
 
+						case HELP:
+							switch_to_form(HELP_FORM);
+							printf("about, switch to form 0\r\n");
+						break;
+
 
 						// **************** form8
 						case FORM8_MORE:
@@ -1462,7 +1568,12 @@ int main(void)
 							
 						break;
 						
-						
+						// **************** form9
+						case FORM9_BACK:
+							switch_to_form(MENU_FORM);
+							printf("form9 back, switch to menu form  \r\n");
+						break;						
+
 						// **************** form10
 						case FORM10_BACK:
 							switch_to_form(MENU_FORM);
@@ -1482,17 +1593,17 @@ int main(void)
 					
 					switch (event_report.object_index) {
 						
-						// **************** form0
-						case TRIGGER_SOUND_SW:
+						// **************** form1
+						case FORM1_TRIGGER_SOUND_SW:
 							switch (event_report.value_lsb){
 								case ON:
-									io_write_clear_ack(set_trigger_sound_on,6);
+									io_write_clear_ack(set_form1_trigger_sound_on,6);
 									session_data.trigger_sound = true;
 									printf("trigger snd switch is on\r\n");								
 								break;
 								
 								case OFF:
-									io_write_clear_ack(set_trigger_sound_off,6);
+									io_write_clear_ack(set_form1_trigger_sound_off,6);
 									session_data.trigger_sound = false;
 									printf("trigger snd switch is off\r\n");	
 								break;
@@ -1500,24 +1611,58 @@ int main(void)
 								}
 							break;
 												
-						case RESPONSE_SOUND_SW:
+						case FORM1_RESPONSE_SOUND_SW:
 							switch (event_report.value_lsb){
 								case ON:
-									io_write_clear_ack(set_response_sound_on,6);
+									io_write_clear_ack(set_form1_response_sound_on,6);
 									session_data.response_sound = true;
 									printf("response snd switch is on\r\n");	
 								break;
 								
 								case OFF:
-									io_write_clear_ack(set_response_sound_off,6);
+									io_write_clear_ack(set_form1_response_sound_off,6);
 									session_data.response_sound = false;
 									printf("response snd switch is off\r\n");	
 								break;
 								
 							}
 						break;
-												
+								
+						// form4
+						
+						case TRIGGER_SOUND_SW:
+						switch (event_report.value_lsb){
+							case ON:
+							io_write_clear_ack(set_trigger_sound_on,6);
+							session_data.trigger_sound = true;
+							printf("trigger snd switch is on\r\n");
+							break;
+													
+							case OFF:
+							io_write_clear_ack(set_trigger_sound_off,6);
+							session_data.trigger_sound = false;
+							printf("trigger snd switch is off\r\n");
+							break;
+													
+						}
 						break;
+												
+						case RESPONSE_SOUND_SW:
+						switch (event_report.value_lsb){
+							case ON:
+							io_write_clear_ack(set_response_sound_on,6);
+							session_data.response_sound = true;
+							printf("response snd switch is on\r\n");
+							break;
+													
+							case OFF:
+							io_write_clear_ack(set_response_sound_off,6);
+							session_data.response_sound = false;
+							printf("response snd switch is off\r\n");
+							break;
+													
+						}
+						break;		
 						default:
 						;
 					}
