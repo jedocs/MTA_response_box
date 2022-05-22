@@ -149,17 +149,17 @@ void serial_tx_callback(const struct usart_async_descriptor *const io_descr)
 
 void uart_init()
 {
-	printf("register rx callback\r\n");
+	printf("register rx callback...\r");
 	//	Setup RX callback
 	usart_async_register_callback(&USART_1, USART_ASYNC_RXC_CB, serial_rx_callback);
 
-	printf("register tx callback\r\n");
+	printf("register tx callback...\r");
 	//	Setup TX callback
 	usart_async_register_callback(&USART_1, USART_ASYNC_TXC_CB, serial_tx_callback);
 	// 	usart_async_register_callback(&USART_1, USART_ASYNC_ERROR_CB, err_cb);
 
 	//	Setup USART
 	usart_async_get_io_descriptor(&USART_1, &io);
-	printf("Enable uart1\r\n");
+	printf("Enable uart1...\r");
 	usart_async_enable(&USART_1);
 }

@@ -1,11 +1,10 @@
 
-//char hello[] = "S down\r\n";
+//char hello[] = "S down\r";
 //cdcdf_acm_write((uint8_t *)hello, 8);
 
 #include "atmel_start.h"
 #include "usb_start.h"
 #include <global.h>
-
 
 /* Max LUN number */
 #define CONF_USB_MSC_MAX_LUN 0
@@ -70,7 +69,6 @@ static void hiddf_sof_event(void)
 	}
 	
 	if (session_data.session_running) {		
-
 		if (session_data.trigger){
 			if (key_array[4].state == HID_KB_KEY_UP){
 				key_array[4].state = HID_KB_KEY_DOWN;
@@ -96,14 +94,13 @@ static void hiddf_sof_event(void)
 			repress_delay=10;
 		}				
 					
-		else if (!repress_delay){ 
-					
+		else if (!repress_delay){ 					
 			if (gpio_get_pin_level(I1) == true){
 				if ((key_array[0].state == HID_KB_KEY_UP) && (key_array[4].state == HID_KB_KEY_UP)){		//****************************** késleltetés!!!!!!!!!!!!!!!!!!!!!
 					key_array[0].state = HID_KB_KEY_DOWN;
 					session_data.simulated_A=false;
 					key_changed=true;
-					beep_sound_length = BEEP_SOUND_LENGTH;
+					response_beep_length = RESPONSE_BEEP_LENGTH;
 				}
 			}
 			else {
@@ -118,7 +115,7 @@ static void hiddf_sof_event(void)
 					key_array[1].state = HID_KB_KEY_DOWN;
 					session_data.simulated_B=false;
 					key_changed=true;
-					beep_sound_length = BEEP_SOUND_LENGTH;
+					response_beep_length = RESPONSE_BEEP_LENGTH;
 				}
 			}
 			else {
@@ -133,7 +130,7 @@ static void hiddf_sof_event(void)
 						key_array[2].state = HID_KB_KEY_DOWN;
 						session_data.simulated_C=false;
 						key_changed=true;
-						beep_sound_length = BEEP_SOUND_LENGTH;
+						response_beep_length = RESPONSE_BEEP_LENGTH;
 					}
 				}
 				else {
@@ -148,7 +145,7 @@ static void hiddf_sof_event(void)
 					key_array[3].state = HID_KB_KEY_DOWN;
 					session_data.simulated_D=false;
 					key_changed=true;
-					beep_sound_length = BEEP_SOUND_LENGTH;
+					response_beep_length = RESPONSE_BEEP_LENGTH;
 				}
 			}
 			else {
@@ -160,11 +157,8 @@ static void hiddf_sof_event(void)
 		}
 	}
 		
-	else if ((session_data.manual_trigger) || (session_data.simulation_mode)) {		
-		
-		
+	else if ((session_data.manual_trigger) || (session_data.simulation_mode)) {				
 		if (session_data.trigger){
-
 			if (key_array[4].state == HID_KB_KEY_UP){
 				key_array[4].state = HID_KB_KEY_DOWN;
 				key_changed=true;
@@ -275,7 +269,6 @@ static void hiddf_sof_event(void)
 	}
 }
 
-
 static struct usbdc_handler hiddf_sof_event_h = {NULL, (FUNC_PTR)hiddf_sof_event};
 
 void hiddf_init()
@@ -285,31 +278,34 @@ void hiddf_init()
 
 void composite_device_init(void)
 {
-	printf("\r\nusbdc init\r\n");
+	printf("USB stack init\r");
 	/* usb stack init */
 	usbdc_init(ctrl_buffer);
 
 	/* usbdc_register_funcion inside */
-	printf("\r\ncdcf_acm init\r\n");
+	printf("cdcf_acm init\r");
 	cdcdf_acm_init();
 
+	printf("mouse init\r");
 	hiddf_mouse_init(); //kell!!!!!!
-	printf("\r\nkeyboard init\r\n");
+	
+	printf("keyboard init\r");
 	key_changed=false;
 	hiddf_keyboard_init();
+	printf("register USB event handler\r\r");
 	hiddf_init();
 }
 
 void composite_device_start(void)
 {
-	printf("\r\nusbdc start\r\n");
+	printf("usbdc start...\r");
 	usbdc_start(multi_desc);
-	printf("\r\nusbdc attach\r\n");
+	printf("usbdc attach...\r");
 	usbdc_attach();
 }
 
 void usb_init(void)
 {
-	printf("\r\ncomposite device init\r\n");
+	printf("\rcomposite device init\r");
 	composite_device_init();
 }

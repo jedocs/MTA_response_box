@@ -10,10 +10,9 @@
 #define GLOBAL_H_
 #include <atmel_start.h>
 
-#define VERSION "1.0.7"
+#define VERSION "1.0.8"
 
-
-#define BEEP_SOUND_LENGTH 1148
+#define RESPONSE_BEEP_LENGTH 1148
 #define SYNC_BEEP_LENGTH 982
 #define START_SOUND_LENGTH 8100 //10002
 #define STOP_SOUND_LENGTH 10001
@@ -207,7 +206,7 @@
 
 extern bool ACK_received;
 extern bool NAK_received;
-extern uint16_t beep_sound_length;
+extern uint16_t response_beep_length;
 extern uint16_t sync_beep_length;
 extern uint16_t usb_disconnected;
 

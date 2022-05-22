@@ -15,6 +15,6 @@ struct session_temp_values session_temp;
 
 bool ACK_received;
 bool NAK_received;
-uint16_t beep_sound_length = 0;
+uint16_t response_beep_length = 0;
 uint16_t sync_beep_length = 0;
 uint16_t usb_disconnected = 0;

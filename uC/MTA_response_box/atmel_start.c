@@ -6,10 +6,11 @@
 void atmel_start_init(void)
 {
 	system_init();
-	stdio_redirect_init();
+	//stdio_redirect_init();
 	usb_init();
 	
-	printf("\r\nbefore composite device start\r\n");
+	printf("\rcomposite device start:\r");
 	composite_device_start();	
+	printf("\rpersistent storage init\r");
 	persistent_storage_init();
 }
