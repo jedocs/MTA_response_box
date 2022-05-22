@@ -1741,7 +1741,7 @@ int main(void)
 				;					
 			}
 			
-			printf("Event received from %u, index: %u\r", event_report.object_id, event_report.object_index);
+			//printf("Event received from %u, index: %u\r", event_report.object_id, event_report.object_index);
 			
 			//snprintf(buffer, 64, "%i\r", digit);
 			//cdcdf_acm_write((uint8_t *) buffer, strnlen(buffer, 64));

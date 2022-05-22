@@ -2814,7 +2814,7 @@ file C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\PicasoFunctions.fn
 002808  000077        
 002809  000002        
 002810  000003        
-002811  000004  // generated 2022. 05. 21. 21:49:50
+002811  000004  // generated 2022. 05. 22. 13:34:46
 002812  000005        
 002813  000006  #MODE RUNFLASH
 002814  000007        
@@ -2853,7 +2853,7 @@ file D:\munka\MTA\projects\MTA_response_box\LCD\resp_box_1.4DWork\resp_box_1Cons
 
 002842  000013  #inherit "resp_box_1Const.inc"
 002843  000013  #inherit "resp_box_1Const.inc"
-002844  000001  // File generated 2022. 05. 21. 21:49:31
+002844  000001  // File generated 2022. 05. 22. 13:34:26
 002845  000002  // Warning! This is a generated file, any manual changes will be
 002846  000003  // lost during the next generation.
 002847  000004        
@@ -2931,8 +2931,8 @@ file D:\munka\MTA\projects\MTA_response_box\LCD\resp_box_1.4DWork\resp_box_1Cons
 002919  000040  #constant  Strings11Size     1
 002920  000041  #constant  Strings22Count    12
 002921  000041  #constant  Strings22Count    12
-002922  000042  #constant  Strings22Size     343
-002923  000042  #constant  Strings22Size     343
+002922  000042  #constant  Strings22Size     351
+002923  000042  #constant  Strings22Size     351
 002924  000043  #constant  Strings23Count    12
 002925  000043  #constant  Strings23Count    12
 002926  000044  #constant  Strings23Size     38
@@ -8006,7 +8006,7 @@ Strings21Size                          4  0x00000004 (const dword)  (usage 3)
 Strings21StartH                        0  0x00000000 (const dword)  (usage 3)
 Strings21StartL                     1536  0x00000600 (const dword)  (usage 3)
 Strings22Count                        12  0x0000000c (const dword)  (not used)
-Strings22Size                        343  0x00000157 (const dword)  (usage 3)
+Strings22Size                        351  0x0000015f (const dword)  (usage 3)
 Strings22StartH                        0  0x00000000 (const dword)  (usage 3)
 Strings22StartL                     9216  0x00002400 (const dword)  (usage 3)
 Strings23Count                        12  0x0000000c (const dword)  (not used)
